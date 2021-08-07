@@ -1,0 +1,44 @@
+{% load my_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div>
+        {% if lista_clientes %}
+            <ul>
+                {% for cliente in  lista_clientes %}
+
+                <li>
+                    <a href="{% url 'person_detail' cliente.pk %}">{{ cliente.nome_completo|title }}</a>
+
+                </li>
+                {% endfor %}
+                 <p>Quantidade de inscritos:{{ lista_clientes|length }}</p>
+                 <p>Tamanaho do Arquivo:{{ lista_clientes|filesizeformat }}</p>
+
+
+            </ul>
+        {% else %}
+            <p> Não há pessoas cadastradas</p>
+        {% endif %}
+
+        <div>
+
+        </div>
+
+    </div>
+        <a  href="{% url 'person_form_create' %}">Novo formulário</a>
+
+    {% block footer %}
+        {% include 'footer.html' %}
+    {% endblock %}
+
+
+
+</body>
+</html>

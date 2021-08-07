@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes</title>
+</head>
+<body>
+    Listagem de pessoas
+<br>
+    {% if person.photo %}
+    <img src="{{ person.photo.url }}"><br>
+        {{ person.last_name }}<br>
+        {{ person.bio }}<br>
+        {{ person.salary }} ,<br>
+        {{ now }}
+
+    {% else %}
+        {{ person.last_name }}<br>
+        {{ person.bio}}<br>
+        {{ person.salary }} ,<br>
+        {{ now }}
+    {% endif %}
+
+    <h2>Vendas</h2>
+    <a href="{% url 'venda_formu' %}">Adcionar vendas</a>
+    {% for venda in vendas %}
+        <p>Venda id : {{ venda.id }}</p>
+        <h3>Lista de produtos</h3>
+        <ul>
+            {% for produto in venda.produtos.all %}
+            <li> {{ produto.id }} - {{ produto.descricao }} - {{produto.total}}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+    <h4>Atualizar dados do usuário</h4>
+    <a href="{% url 'person_update' person.id %}">Update</a>
+    <a href="{% url 'person_delete' person.id %}">Delete</a>
+</body>
+</html>

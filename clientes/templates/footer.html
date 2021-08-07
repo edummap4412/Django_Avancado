@@ -1,0 +1,11 @@
+{% load my_tags %}
+<footer class="footer">
+    <div class="container">
+        <span class="text-muted">Faça essa Tag</span>
+        <p>Teste aqui o footer</p>
+        {% current_time "%Y-%m-%d %I:%M %p" as the_time %}
+        <p>The time is {{ the_time }}.</p>
+
+    </div>
+
+</footer>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicione  Vendas</title>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+       <button class="btn btn-common">ENVIAR</button>
+        <input type="checkbox"> {{ vend.produtos }}
+    </form>
+
+     <h3>teste</h3>
+
+<body>
+
+</body>
+</html>

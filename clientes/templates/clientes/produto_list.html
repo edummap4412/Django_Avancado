@@ -1,0 +1,26 @@
+
+<body>
+  <h1>Produtos atuais</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Descrição</th>
+                <th>Preco</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for prod in list_produto %}
+              <tr>
+                  <td>{{ prod.descricao }}</td>
+                  <td>{{ prod.preco }}</td>
+
+              </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+
+</body>
+</html>

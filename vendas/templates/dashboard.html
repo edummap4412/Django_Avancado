@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load my_tags %}
+
+{% block main %}
+    <h1>DashBoard</h1>
+    <ul>
+        <li>Média:{{ media|floatformat:2 }}</li>
+        <li>Desconto:{{ media_desconto|floatformat:2 }}</li>
+        <li>Minimo:{{ min }}</li>
+        <li>Máximo:{{ max }}</li>
+        <li>Qtd.Pedidos:{{ contador }}</li>
+        <li>N.Pedidos(com NotaFiscal):{{ pedidoscom }}</li>
+        <li>N.Pedidos(sem NotaFiscal):{{ pedidossem }}</li>
+    </ul>
+
+{% endblock %}
